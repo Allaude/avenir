@@ -109,4 +109,13 @@ class Verify extends Admin_Controller {
 				array('5','Kota Pekalongan','5')));
 		$excel->writer->saveFile('contoh');
 	}
+	function testing_breadcrumb(){
+		$this->load->library('make_bread');
+		$this->make_bread->add('first crumb','testing',TRUE);
+		$this->make_bread->add('second crumb','the test',FALSE);
+		$this->make_bread->add('test','https://www.google.com');
+		$this->make_bread->add('Testing Breadcrumb');
+		$Breadcrumb = $this->make_bread->output();
+		echo $Breadcrumb;
+	}
 }
