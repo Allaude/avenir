@@ -11,22 +11,6 @@ class Verify extends Admin_Controller {
 			redirect('/');
 		}
 	}
-
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
 	public function index()
 	{
 		//check enviroment
@@ -110,12 +94,10 @@ class Verify extends Admin_Controller {
 		$excel->writer->saveFile('contoh');
 	}
 	function testing_breadcrumb(){
-		$this->load->library('make_bread');
-		$this->make_bread->add('first crumb','testing',TRUE);
-		$this->make_bread->add('second crumb','the test',FALSE);
-		$this->make_bread->add('test','https://www.google.com');
-		$this->make_bread->add('Testing Breadcrumb');
-		$Breadcrumb = $this->make_bread->output();
-		echo $Breadcrumb;
-	}
+        $this->load->library('make_bread');
+        $this->make_bread->add('first crumb', 'testing', 1);
+        //$this->make_bread->add('second crumb', 'the_test', 0);
+        //$this->make_bread->add('test','http://google.com');
+        $breadcrumb = $this->make_bread->output();
+        echo $breadcrumb;	}
 }
