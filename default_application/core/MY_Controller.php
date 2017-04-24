@@ -14,7 +14,7 @@ class MY_Controller extends CI_Controller
 		$this->data['before_closing_body'] = '';
 	}
 	protected function render($the_view = NULL,$template = 'public_master'){
-		if ($template == 'json' || $this->input->is_ajax_request()){
+		if ($this->input->is_ajax_request()){
 			header('Content-Type: application/json');
 			echo json_encode($this->data);
 		} elseif(is_null($template)){
